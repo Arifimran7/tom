@@ -1,25 +1,18 @@
 import React, { useState } from "react";
-import { FaTrashAlt } from "react-icons/fa";
+import ItemList from "./itemList";
 
-const Project1 = () => {
-  const [item, setItem] = useState([
-    { id: 1, checked: true, item: "laptops & mobile" },
-    { id: 2, checked: false, item: "mobileCause" },
-    { id: 3, checked: true, item: "wires and chargers" },
-  ]);
-  console.log(item);
+const Project1 = ({ item, handleCheck, handleDeleteRow }) => {
   return (
     <main>
-      <p>wjorhfuieri</p>
-      <ul className="row">
-        {item.map((item) => (
-          <li className="item">
-            <input type="checkbox" checked={item.checked}></input>
-            <lable>{item.item}</lable>
-            <FaTrashAlt role="button" tabIndex="01" />
-          </li>
-        ))}
-      </ul>
+      {item.length ? (
+        <ItemList
+          item={item}
+          handleCheck={handleCheck}
+          handleDeleteRow={handleDeleteRow}
+        />
+      ) : (
+        <p className="text-3xl font-bold underline"> page is empty</p>
+      )}
     </main>
   );
 };

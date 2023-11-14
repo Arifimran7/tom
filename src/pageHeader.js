@@ -1,6 +1,3 @@
-import { Component, useState } from "react";
-import PageContent from "./PageContent";
-
 const PageHeader = () => {
   return (
     <header>

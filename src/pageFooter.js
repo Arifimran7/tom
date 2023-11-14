@@ -1,7 +1,10 @@
-const PageFooter = () => {
+const PageFooter = ({ length }) => {
   return (
     <footer>
-      <p>page Footer</p>
+      <p>
+        {length}
+        {length === 1 ? "list" : "lists"}
+      </p>
     </footer>
   );
 };
